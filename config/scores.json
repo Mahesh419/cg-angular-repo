@@ -1,0 +1,19 @@
+{
+	"scores": [
+		{
+			"suite": "ScoreService",
+			"desc": "should validate object parameters",
+			"score": 20
+		},
+		{
+			"suite": "ScoreService",
+			"desc": "should be able to add score item",
+			"score": 10
+		},
+		{
+			"suite": "ScoreService",
+			"desc": "should validate values which are greater than 100",
+			"score": 10
+		}
+	]
+}

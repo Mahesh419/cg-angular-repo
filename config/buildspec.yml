@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Installing Project dependencies
+      - npm install --silent
+      - npm install -g @angular/cli
+      - echo Finished Installing Project dependencies
+  pre_build:
+    commands:
+      - echo Testing Angular Project
+      - echo $CODE_COMMIT_REPO
+      - ng test || echo $CODE_COMMIT_REPO > ./config/repo.txt
+      - cd config && node result.js
+      - echo Finished Testing Angular Project
+  build:
+    commands:
+      - echo Building Project
+      - ng build
+      - echo Finished Building
+
+cache:
+  paths:
+    - "node_modules/**/*"
